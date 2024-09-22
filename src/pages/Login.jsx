@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
 const [email, setEmail]= useState("")
 const [pass,setPass]= useState("")
+const  {login} = useContext(AuthContext)
+
 
 const handleSubmit =(e)=> {
   e.preventDefault()
+  if (email.toLocaleLowerCase()=== "seckin@seckin.com" && pass === "1234") {
+    login({email,pass});
+  } else {
+alert("Kullanici Bilgileri Yanlis")
+  }
 }
 
   return (
@@ -26,7 +34,7 @@ const handleSubmit =(e)=> {
 </div>
     <div className="flex flex-col gap-2">
 <label className="text-gray-600" htmlFor="">Password</label>
-<input className="login-input" type="email" id="password" placeholder="Enter your password" onChange={(e)=>setPass(e.target.value)} />
+<input className="login-input" type="text" id="password" placeholder="Enter your password" onChange={(e)=>setPass(e.target.value)} />
 </div>
 <div className="text-center">
 <button className=" w-[10rem] bg-blue-900 h-[2.5rem] uppercase hover:opacity-90 rounded-[7px] text-center justify-center">Sign in</button>
