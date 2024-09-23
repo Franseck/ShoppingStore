@@ -5,6 +5,7 @@ import Products from '../pages/Products'
 import About from '../pages/About'
 import NotFound from '../pages/NotFound'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "../components/Navbar"
 
 
 const AppRouter = () => {
@@ -13,11 +14,13 @@ const AppRouter = () => {
 
     <BrowserRouter>
 
+<Navbar/>
+
     <Routes>
       <Route path="/" element={<Login/>} />
-      <Route path="/home" element={<Home/>} />
-      <Route path="/products" element={<Products/>} />
-      <Route path="/about" element={<About/>} />
+      <Route path="/dashboard" element={<Home/>} />
+      <Route path="/dashboard/products" element={<Products/>} />
+      <Route path="/dashboard/about" element={<About/>} />
       <Route path="/*" element={<NotFound/>} />
     </Routes>
 

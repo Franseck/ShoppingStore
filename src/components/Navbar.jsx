@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import logo from "../assets/logo.png";
-import { closeNavbar, logoutIcon, openNavbar } from "../helper/icons";
+import { closeNavbar, logoutIcon, openNavbar } from "../helper/icon";
 import { NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 
@@ -20,27 +20,26 @@ const navigation = [
 ];
  
 const Navbar =()=>{
-return (
+
   const [show, setShow] = useState(false);
    const location = useLocation();
    const { logout } = useContext(AuthContext);
 
    return (
-     <nav className="bg-navbarColor md:text-sm ">
+     <nav className="bg-slate-400 md:text-sm font-loginTitle ">
        <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8 ">
          <div className="flex items-center justify-between py-5  ">
            <a
              href="https://clarusway.com/"
              target="true"
-             className="flex items-center"
+             className="flex items-center "
            >
-             <img src={logo} alt="clarusway" width={50} height={50} />
+             <img src={logo} alt="palm" width={50} height={50} />
              <span className="text-gray-700 hover:text-gray-900 font-medium">
-               Clarusway
+               Seckin's Store
              </span>
            </a>
-           {/* //* icon md ekranlardan sonra gizlensin diyoruz */}
-           <div className="md:hidden">
+               <div className="md:hidden">
              <button
                onClick={() => setShow(!show)}
                className="text-gray-500 hover:text-gray-800"
