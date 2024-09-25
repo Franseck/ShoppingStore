@@ -1,26 +1,16 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState } from "react";
 
-export const AuthContext = createContext()
+export const AuthContext = createContext();
+// export const {Provider} = createContext()
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(
-    JSON.parse(sessionStorage.getItem("user")) || null
-  );
-
+  const [user, setUser] = useState(null);
   console.log(user);
   const login = (info) => {
     setUser(info);
-
   };
-
-  const logout = () => setUser(null);
-
-  useEffect(() => {
-    sessionStorage.setItem("user", JSON.stringify(user));
-  }, [user]);
-
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login }}>
       {children}
     </AuthContext.Provider>
   );

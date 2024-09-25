@@ -30,9 +30,9 @@ const Navbar =()=>{
        <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8 ">
          <div className="flex items-center justify-between py-5  ">
            <a
-             href="https://clarusway.com/"
+             href="/"
              target="true"
-             className="flex items-center "
+             className="flex items-center gap-5 "
            >
              <img src={logo} alt="palm" width={50} height={50} />
              <span className="text-gray-700 hover:text-gray-900 font-medium">
@@ -76,7 +76,7 @@ const Navbar =()=>{
            <div className="flex-1 items-center justify-end gap-x-6 mt-6 space-y-6 md:flex md:space-y-0 md:mt-0 ">
              <NavLink
                onClick={logout}
-               className="flex items-center justify-center gap-x-1 py-2 px-4 font-medium text-gray-700 hover:bg-main hover:text-white rounded-full md:inline-flex"
+               className="flex items-center justify-center gap-x-1 py-2 px-4 font-medium text-gray-700 hover:bg-main hover:bg-orange-400  text-white rounded-full md:inline-flex"
              >
                Logout {logoutIcon}
              </NavLink>
