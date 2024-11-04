@@ -5,14 +5,15 @@ import Navbar from "../components/Navbar";
 
 const PrivateRouter = () => {
   const { user } = useContext(AuthContext);
-  return user ? (
+  return (
+    user ? (
     <>
       <Navbar />
       <Outlet />
     </>
   ) : (
     <Navigate to="/" />
-  );
+  ));
 };
 
 export default PrivateRouter;
