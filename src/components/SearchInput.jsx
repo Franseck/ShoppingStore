@@ -1,5 +1,5 @@
 import React from "react";
-import { searchIcon } from "../helper/icons";
+import { searchIcon } from "../helper/icon";
 import { useProductsContext } from "../context/ProductProvider";
 
 const SearchInput = () => {

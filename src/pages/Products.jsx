@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 import SearchInput from "../components/SearchInput";
 import { useProductsContext } from "../context/ProductProvider";
-import ScrollToTop from "../components/ScrollToTop";
+import Scroll from "../components/Scroll";
 
 const Products = () => {
   const { loading, products, setSearch } = useProductsContext();
@@ -29,7 +29,7 @@ const Products = () => {
           No Products
         </h2>
       )}
-      <ScrollToTop />
+      <Scroll />
     </div>
   );
 };
