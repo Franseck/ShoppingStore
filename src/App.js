@@ -4,9 +4,11 @@ import AuthProvider from './context/AuthProvider'
 
 const App = () => {
   return (
-   <AuthProvider>
-      <AppRouter/>
-</AuthProvider>
+    <AuthProvider>
+      <ProductProvider>
+        <AppRouter />
+      </ProductProvider>
+    </AuthProvider>
   )
 }
 
