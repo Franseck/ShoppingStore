@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { testimonials } from "../helper/data";
 
 const Testimonials = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
 
   return (
     <div className="text-center">

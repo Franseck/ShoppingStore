@@ -14,14 +14,6 @@ module.exports = {
     themes: [
       "light",
       "dark",
-      "retro",
-      "cyberpunk",
-      "halloween",
-      "lofi",
-      "pastel",
-      "autumn",
-      "coffee",
-      "nord",
-    ],
+       ],
   },
 };

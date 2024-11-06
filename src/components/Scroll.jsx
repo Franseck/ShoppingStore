@@ -6,9 +6,9 @@ export default function Scroll() {
 
 
   return pathname.includes("products") ? (
-  
-    <FaAngleDoubleUp onClick={() => window.scrollTo(0, 0)}  /> 
-  
+
+    <FaAngleDoubleUp className="h-7"  onClick={() => window.scrollTo(0, 0)} /> 
+
   ) : null
 
 }

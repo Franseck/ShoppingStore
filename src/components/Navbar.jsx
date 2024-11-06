@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import { closeNavbar, logoutIcon, openNavbar } from "../helper/icon";
 import { NavLink, useLocation } from "react-router-dom";
@@ -24,6 +24,12 @@ const Navbar =()=>{
   const [show, setShow] = useState(false);
    const location = useLocation();
    const { logout } = useContext(AuthContext);
+   const [theme, setTheme] = useState (localStorage.getItem("theme")? localStorage.getItem("theme"): "light");
+
+   useEffect(()=> {
+    const localTheme = localStorage.setItem("theme", theme)
+    document.querySelector("html").setAttribute("data-theme", localTheme)
+   },[theme])
 
    return (
      <nav className="bg-slate-400 md:text-sm font-loginTitle ">
@@ -82,11 +88,11 @@ const Navbar =()=>{
              </NavLink>
              <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" />
+  <input type="checkbox" className="theme-controller" value="light" />
 
   {/* sun icon */}
   <svg
-    className="swap-on h-10 w-10 fill-current"
+    className="swap-off h-10 w-10 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -95,7 +101,7 @@ const Navbar =()=>{
 
   {/* moon icon */}
   <svg
-    className="swap-off h-10 w-10 fill-current"
+    className="swap-on h-10 w-10 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path

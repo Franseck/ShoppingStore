@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 import SearchInput from "../components/SearchInput";
@@ -7,7 +5,7 @@ import { useProductsContext } from "../context/ProductProvider";
 import Scroll from "../components/Scroll";
 
 const Products = () => {
-  const { loading, products, setSearch } = useProductsContext();
+  const { loading, products } = useProductsContext();
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
@@ -29,7 +27,9 @@ const Products = () => {
           No Products
         </h2>
       )}
-      <Scroll />
+      <div className="cursor-pointer flex justify-end" >
+      <Scroll  />
+      </div>
     </div>
   );
 };
