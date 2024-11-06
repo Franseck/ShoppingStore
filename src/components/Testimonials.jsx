@@ -5,61 +5,59 @@ const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   return (
-    <section className="py-14">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-indigo-600 font-semibold pb-6">
-            What people are saying
-          </h3>
-          <ul>
-            {testimonials.map((item, idx) =>
-              currentTestimonial == idx ? (
-                <li key={idx}>
-                  <figure>
-                    <blockquote>
-                      <p className="text-gray-800 text-xl font-semibold sm:text-2xl">
-                        “{item.quote}“
-                      </p>
-                    </blockquote>
-                    <div className="mt-6">
-                      <img
-                        src={item.avatar}
-                        className="w-16 h-16 mx-auto rounded-full"
-                      />
-                      <div className="mt-3">
-                        <span className="block text-gray-800 font-semibold">
-                          {item.name}
-                        </span>
-                        <span className="block text-gray-600 text-sm mt-0.5">
-                          {item.title}
-                        </span>
-                      </div>
-                    </div>
-                  </figure>
-                </li>
-              ) : (
-                ""
-              )
-            )}
-          </ul>
-        </div>
-        <div className="mt-6">
-          <ul className="flex gap-x-3 justify-center">
-            {testimonials.map((item, idx) => (
-              <li key={idx}>
-                <button
-                  className={`w-2.5 h-2.5 rounded-full duration-150 ring-offset-2 ring-indigo-600 focus:ring ${
-                    currentTestimonial == idx ? "bg-indigo-600" : "bg-gray-300"
-                  }`}
-                  onClick={() => setCurrentTestimonial(idx)}
-                ></button>
-              </li>
-            ))}
-          </ul>
+    <div className="text-center">
+    <div className="stats shadow text-center ">
+    <div className="stat">
+      <div className="stat-figure text-primary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          className="inline-block h-8 w-8 stroke-current">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+        </svg>
+      </div>
+      <div className="stat-title">Total Likes</div>
+      <div className="stat-value text-primary">25.6K</div>
+      <div className="stat-desc">21% more than last month</div>
+    </div>
+  
+    <div className="stat">
+      <div className="stat-figure text-secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          className="inline-block h-8 w-8 stroke-current">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+      <div className="stat-title">Page Views</div>
+      <div className="stat-value text-secondary">2.6M</div>
+      <div className="stat-desc">21% more than last month</div>
+    </div>
+  
+    <div className="stat">
+      <div className="stat-figure text-secondary">
+        <div className="avatar online">
+          <div className="w-16 rounded-full">
+            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+          </div>
         </div>
       </div>
-    </section>
-  );
-};
-
+      <div className="stat-value">86%</div>
+      <div className="stat-title">Tasks done</div>
+      <div className="stat-desc text-secondary">31 tasks remaining</div>
+    </div>
+  </div>
+  </div>
+)}
 export default Testimonials;

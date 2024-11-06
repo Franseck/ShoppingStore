@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 import SearchInput from "../components/SearchInput";

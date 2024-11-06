@@ -4,7 +4,6 @@ import Home from "../pages/Home";
 import Products from "../pages/Products";
 import About from "../pages/About";
 import NotFound from "../pages/NotFound";
-import Navbar from "../components/Navbar";
 import PrivateRouter from "./PrivateRouter";
 import ProductDetail from "../pages/ProductDetail";
 
